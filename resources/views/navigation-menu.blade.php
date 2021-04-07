@@ -12,12 +12,14 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <div></div>
                     <x-jet-nav-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('admin.dashboard')">
                         داشبورد
                     </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('admin.user') }}" :active="request()->routeIs('admin.user')">
                         کاربران
                     </x-jet-nav-link>
+
                 </div>
             </div>
 

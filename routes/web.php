@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\AdminComponent;
+use App\Http\Livewire\UserComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,9 +24,12 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 
-Route::middleware(['auth:sanctum', 'verified'])->group(function (){
-    Route::name('admin.')->group(function (){
-        Route::get('/admin', AdminComponent::class)->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+
+    Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+        Route::get('/', AdminComponent::class)->name('dashboard');
+        Route::get('/user', UserComponent::class)->name('user');
     });
+
 });
 
