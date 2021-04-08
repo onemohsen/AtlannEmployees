@@ -19,6 +19,9 @@
                     <x-jet-nav-link href="{{ route('admin.user') }}" :active="request()->routeIs('admin.user')">
                         کاربران
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('admin.report.task') }}" :active="request()->routeIs('admin.report.task')">
+                        گزارش
+                    </x-jet-nav-link>
 
                 </div>
             </div>

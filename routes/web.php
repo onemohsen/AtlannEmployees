@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\AdminComponent;
+use App\Http\Livewire\ReportTaskComponenet;
 use App\Http\Livewire\TaskComponent;
 use App\Http\Livewire\UserComponent;
 use App\Http\Middleware\EnsureAdmin;
@@ -28,6 +29,7 @@ Route::middleware(['auth:sanctum', 'verified',EnsureAdmin::class])->group(functi
     Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/', AdminComponent::class)->name('dashboard');
         Route::get('/user', UserComponent::class)->name('user');
+        Route::get('/report/task', ReportTaskComponenet::class)->name('report.task');
     });
 });
 

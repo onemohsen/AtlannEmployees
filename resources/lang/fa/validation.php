@@ -133,14 +133,7 @@ return [
         "size" => "اندازه",
 		"file" => "فایل",
 		"fullname" => "نام کامل",
-        "start_date"=>"تاریخ شروع",
-        "end_date"=>"تاریخ پایان",
-        "start_time"=>"ساعت شروع",
-        "end_time"=>"ساعت پایان",
-        "capacity"=>"ظرفیت",
-        "is_active"=>"فعال یا غیرفعال",
-        "parentRoleId"=>"نوع",
-        "childRoleId"=>"نوع",
-        'brand_id'=>"برند"
+        "startDate"=>"تاریخ شروع",
+        "endDate"=>"تاریخ پایان",
     ],
 ];
