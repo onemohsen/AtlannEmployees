@@ -90,7 +90,7 @@
                                     @empty
                                         <tr>
                                             <td class="px-6 py-4 whitespace-nowrap " colspan="3">
-                                                کاربری یافت نشد !!!
+                                                کاری یافت نشد !!!
                                             </td>
                                         </tr>
                                     @endforelse
