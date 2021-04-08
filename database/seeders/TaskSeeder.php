@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
 class TaskSeeder extends Seeder
@@ -14,76 +15,57 @@ class TaskSeeder extends Seeder
      */
     public function run()
     {
-        $userAdmin = User::find(1) ;
-        $userEmpl1 = User::find(2) ;
-        $userEmpl2 = User::find(3) ;
+        $userAdmin = User::find(1);
+        $userEmployees = User::find([2, 3, 4]);
 
+        foreach ($userEmployees as $userEmployee) {
+            $startDate = Carbon::today()->subDay(5);
+            $endDate = Carbon::today()->addDay(5);
+            while ($startDate <= $endDate) {
+                $userEmployee->tasks()->create([
+                    'name' => 'کار کارمند' . $userEmployee->id,
+                    'note' => 'یادداشت کار کارمند' . $userEmployee->id,
+                    'date' => $startDate
+                ]);
+                $startDate = Carbon::parse($startDate)->addDay(1);
+            }
+        }
         $userAdmin->tasks()->createMany([
             [
-                'name'=>'کار مدیر 1',
-                'note'=>'یادداشت کار مدیر 1',
-                'date'=>'2021-04-06'
+                'name' => 'کار مدیر1',
+                'note' => 'یادداشت کار مدیر1',
+                'date' => '2021-04-06'
             ],
             [
-                'name'=>'کار مدیر 2',
-                'note'=>'یادداشت کار مدیر 2',
-                'date'=>'2021-04-07'
+                'name' => 'کار مدیر1',
+                'note' => 'یادداشت کار مدیر1',
+                'date' => '2021-04-07'
             ],
             [
-                'name'=>'کار مدیر 3',
-                'note'=>'یادداشت کار مدیر 3',
-                'date'=>'2021-04-08'
+                'name' => 'کار مدیر1',
+                'note' => 'یادداشت کار مدیر1',
+                'date' => '2021-04-08'
             ],
             [
-                'name'=>'کار مدیر 4',
-                'note'=>'یادداشت کار مدیر 4',
-                'date'=>'2021-04-08'
+                'name' => 'کار مدیر1',
+                'note' => 'یادداشت کار مدیر1',
+                'date' => '2021-04-08'
+            ],
+            [
+                'name' => 'کار مدیر1',
+                'note' => 'یادداشت کار مدیر1',
+                'date' => '2021-04-09'
+            ],
+            [
+                'name' => 'کار مدیر1',
+                'note' => 'یادداشت کار مدیر1',
+                'date' => '2021-04-10'
+            ],
+            [
+                'name' => 'کار مدیر1',
+                'note' => 'یادداشت کار مدیر1',
+                'date' => '2021-04-11'
             ],
         ]);
-        $userEmpl1->tasks()->createMany([
-            [
-                'name'=>'کار کارمند1 1',
-                'note'=>'یادداشت کار کارمند1 1',
-                'date'=>'2021-04-06'
-            ],
-            [
-                'name'=>'کار کارمند1 2',
-                'note'=>'یادداشت کار کارمند1 2',
-                'date'=>'2021-04-07'
-            ],
-            [
-                'name'=>'کار کارمند1 3',
-                'note'=>'یادداشت کار کارمند1 3',
-                'date'=>'2021-04-08'
-            ],
-            [
-                'name'=>'کار کارمند1 4',
-                'note'=>'یادداشت کار کارمند1 4',
-                'date'=>'2021-04-08'
-            ],
-        ]);
-        $userEmpl1->tasks()->createMany([
-            [
-                'name'=>'کار کارمند2 1',
-                'note'=>'یادداشت کار کارمند2 1',
-                'date'=>'2021-04-06'
-            ],
-            [
-                'name'=>'کار کارمند2 2',
-                'note'=>'یادداشت کار کارمند2 2',
-                'date'=>'2021-04-07'
-            ],
-            [
-                'name'=>'کار کارمند2 3',
-                'note'=>'یادداشت کار کارمند2 3',
-                'date'=>'2021-04-08'
-            ],
-            [
-                'name'=>'کار کارمند2 4',
-                'note'=>'یادداشت کار کارمند2 4',
-                'date'=>'2021-04-08'
-            ],
-        ]);
-
     }
 }

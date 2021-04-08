@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="02ef0e6c-d587-4d4c-9648-0818d77b18de" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/task-component.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/task-component.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/navigation-menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/navigation-menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/TaskSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/TaskSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/UserSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/UserSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +182,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1617797491928</updated>
-      <workItem from="1617797493474" duration="33658000" />
+      <workItem from="1617797493474" duration="35387000" />
     </task>
     <servers />
   </component>
