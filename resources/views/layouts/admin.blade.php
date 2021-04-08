@@ -19,7 +19,7 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 <body class="font-sans antialiased">
-<x-jet-banner />
+<x-jet-banner/>
 
 <div class="min-h-screen bg-gray-100">
     @livewire('navigation-menu')
@@ -31,7 +31,7 @@
                 {{ $header }}
             </div>
         </header>
-@endif
+    @endif
 
 <!-- Page Content -->
     <main class="container mx-auto m-5 p-5 ">
