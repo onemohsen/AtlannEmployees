@@ -2,7 +2,7 @@
     <div class="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans">
         <div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
             <div class="mb-4">
-                <h1 class="text-grey-darkest">لیست وظایف</h1>
+                <h1 class="text-grey-darkest">لیست کارها</h1>
                 <div class="flex mt-4">
                     <x-button.primary label="جدید" wire:click="create()"/>
                 </div>
@@ -41,7 +41,7 @@
                     <div class="my-5 p-3 hover:bg-gray-50">
                         <div>
                             <p class="w-full text-grey-darkest opacity-50">
-                                وظیفه ای وجود ندارد !
+                                کار انجام شده ای امروز وجود ندارد !
                             </p>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
         <form wire:submit.prevent="store" class="">
             <x-modal.dialog wire:model.defer="showModal" class="overflow-y-auto">
                 <x-slot name="title">
-                    {{$isEdit ? 'ویرایش وظیفه' : 'ایجاد وظیفه'}}
+                    {{$isEdit ? 'ویرایش کار' : 'ایجاد کار'}}
                 </x-slot>
                 <x-slot name="content">
                     <div class="h-screen-min">
