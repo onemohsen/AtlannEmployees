@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Task;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
@@ -55,14 +56,14 @@ class TaskComponent extends Component
     public function store()
     {
         $this->validate();
-        $this->task->user_id = $this->user->id ;
+        $this->task->user_id = $this->user->id;
         $this->task->save();
         $this->showModal = false;
     }
 
     public function render()
     {
-        $tasks = $this->user->tasks()->get();
+        $tasks = $this->user->tasks()->where('date', Carbon::today())->get();
         return view('livewire.task-component', compact('tasks'));
     }
 }
