@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Task;
+use Carbon\Carbon;
 use Livewire\Component;
 
 class ReportTaskComponenet extends Component
@@ -25,10 +26,7 @@ class ReportTaskComponenet extends Component
     public function filterDate()
     {
         $this->validate();
-
-        $this->tasks = Task::with('user')
-            ->whereBetween('date', [$this->startDate, $this->endDate])
-            ->get();
+        $this->tasks = Task::with('user')->whereBetween('date', [$this->startDate, $this->endDate])->get();
     }
 
     private function getTasksWithUser()

@@ -63,7 +63,7 @@ class TaskComponent extends Component
 
     public function render()
     {
-        $tasks = $this->user->tasks()->where('date', Carbon::today())->get();
+        $tasks = $this->user->tasks()->whereDate('date', Carbon::today())->get();
         return view('livewire.task-component', compact('tasks'));
     }
 }

@@ -21,4 +21,5 @@ class Task extends Model
     {
         return Carbon::createFromDate($date)->diffForHumans();
     }
+
 }

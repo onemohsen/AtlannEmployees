@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class CreateTasksTable extends Migration
@@ -17,7 +18,7 @@ class CreateTasksTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('note')->nullable();
-            $table->date('date')->default(\Carbon\Carbon::today());
+            $table->date('date')->default(now());
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
